@@ -60,7 +60,7 @@ class _QrGeneratorState extends State<QrGenerator> {
               borderRadius: BorderRadius.circular(15)
             ),
             child: Center(
-              child: QrImage(
+              child: QrImageView(
                 data: myUserId,
                 backgroundColor: Colors.white,
                 size: 200,

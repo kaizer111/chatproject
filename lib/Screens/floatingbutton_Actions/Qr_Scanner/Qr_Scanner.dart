@@ -57,16 +57,15 @@ bool _screenOpened = false;
       ),
       body: MobileScanner(
         //fit: BoxFit.fill,
-        allowDuplicates: true,
         controller: cameraController,
         onDetect: _foundBarcode,
       ),
     );
   }
-  void _foundBarcode(Barcode barcode, MobileScannerArguments? args) {
+  void _foundBarcode(BarcodeCapture barcode) {
     /// open screen
     if (!_screenOpened) {
-      final String code = barcode.rawValue ?? "";
+      final String code = barcode.barcodes.first.rawValue ?? "";
    
       debugPrint('Barcode found! $code');
       _screenOpened = true;
